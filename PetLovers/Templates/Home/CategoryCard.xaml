@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:PetLovers.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PetLovers.Templates.Home.CategoryCard"
+             x:DataType="model:Category">
+    <Border StrokeShape="RoundRectangle 13" BackgroundColor="{Binding BackgroundColor}" StrokeThickness="0">
+        <StackLayout Padding="17,10" HorizontalOptions="Start" Spacing="10" VerticalOptions="Center">
+            <Image Source="{Binding Image}" x:Name="this" WidthRequest="40" HeightRequest="43" HorizontalOptions="Start" Aspect="AspectFit">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior BindingContext="{Binding Source={x:Reference this}, Path=BindingContext}" TintColor="{Binding Color}" />
+                </Image.Behaviors>
+            </Image>
+            <Label Text="{Binding Name}" FontSize="14" FontFamily="PoppinsMedium" TextColor="{Binding Color}"/>
+        </StackLayout>
+    </Border>
+</ContentView>

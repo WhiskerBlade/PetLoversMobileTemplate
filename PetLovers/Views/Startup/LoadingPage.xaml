@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetLovers.Views.Startup.LoadingPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:viewModels="clr-namespace:PetLovers.ViewModels.Startup"
+             Shell.NavBarIsVisible="False"
+             Title="LoadingPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoadingPageViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <AbsoluteLayout>
+            <Image Source="splashbg.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
+        <Grid>
+            <BoxView Color="Transparent">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#6928C6D9"
+                    Offset="0.1" />
+                        <GradientStop Color="#691CD697"
+                    Offset="0.8" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <VerticalStackLayout VerticalOptions="EndAndExpand">
+                <Image Source="logo.svg" WidthRequest="124" HeightRequest="128.39"/>
+                <skia:SKLottieView
+                    Margin="0,149,0,130"
+                 VerticalOptions="End" 
+                 Grid.Row="1"
+                 Source="petloversloading.json"
+                 RepeatCount="-1"
+                 HeightRequest="70"
+                 WidthRequest="70"
+                 HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

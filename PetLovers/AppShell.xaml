@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PetLovers.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PetLovers"
+    xmlns:authPages="clr-namespace:PetLovers.Views.Auth"
+    xmlns:homePages="clr-namespace:PetLovers.Views.Home"
+    xmlns:startupPages="clr-namespace:PetLovers.Views.Startup"
+    Shell.FlyoutBehavior="Disabled"
+    Title="PetLovers">
+
+    <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate startupPages:LoadingPage}" Route="LoadingPage" />
+
+    <ShellContent
+    Title="Login Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate authPages:LoginPage}"
+    Route="LoginPage" />
+
+    <ShellContent
+    Title="Register Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate authPages:RegisterPage}"
+    Route="RegisterPage" />
+
+    <ShellContent
+    Title="Password Recovery Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate authPages:PasswordRecoveryPage}"
+    Route="PasswordRecoveryPage" />
+
+    <ShellContent Route="HomePage"
+    ContentTemplate="{DataTemplate homePages:HomePage}"
+    Title="Home" />
+
+</Shell>

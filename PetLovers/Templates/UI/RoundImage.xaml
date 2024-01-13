@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:PetLovers.Helpers"
+             x:Class="PetLovers.Templates.UI.RoundImage">
+    <ContentView.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFill"/>
+            <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,1,1"/>
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="SizeProportional"/>
+        </Style>
+        <ResourceDictionary>
+            <helpers:HalfValueConverter x:Key="HalfValueConverter"
+        />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Frame Padding="0" CornerRadius="{Binding Source={RelativeSource Self}, Path=Width, Converter={StaticResource HalfValueConverter}}">
+        <AbsoluteLayout>
+            <Image x:Name="ImageSet"/>
+        </AbsoluteLayout>
+    </Frame>
+</ContentView>

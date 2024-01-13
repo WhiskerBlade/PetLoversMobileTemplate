@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PetLovers.ViewModels.Auth"
+             x:Class="PetLovers.Views.Auth.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoginPageViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <AbsoluteLayout>
+            <Image Source="loginbg.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
+        <Grid>
+            <BoxView Color="Transparent">
+                <BoxView.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#6928C6D9"
+Offset="0" />
+                        <GradientStop Color="#691CD697"
+Offset="1" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Frame VerticalOptions="EndAndExpand" BackgroundColor="White" Padding="15,35" CornerRadius="35" Margin="0,0,0,-35" BorderColor="Transparent">
+                <VerticalStackLayout>
+                    <StackLayout Spacing="4">
+                        <Label Text="Welcome back !" FontFamily="PoppinsBold" FontSize="22" TextColor="#585858"/>
+                        <Label Text="Login to continue" FontFamily="PoppinsMedium" FontSize="12" TextColor="#C6C6C6"/>
+                    </StackLayout>
+                    <VerticalStackLayout Spacing="17" Margin="0,27,0,0">
+                        <StackLayout>
+                            <Label Text="Username or email" FontFamily="PoppinsSemiBold" FontSize="13" TextColor="#585858"/>
+                            <Entry
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand" />  
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Password" FontFamily="PoppinsSemiBold" FontSize="13" TextColor="#585858"/>
+                            <Entry
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand" />  
+                        </StackLayout>
+                        <Label Text="Forgot Password ?" HorizontalOptions="End" FontFamily="PoppinsRegular" FontSize="12" TextColor="#7B7B7B">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordClickedCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <StackLayout Spacing="9">
+                            <Button HorizontalOptions="FillAndExpand" Text="Login" CornerRadius="26" FontSize="14" FontFamily="PoppinsSemiBold" Padding="0,15" Command="{Binding LoginClickedCommand}">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,1">
+                                        <GradientStop Color="#28C6D9"
+                                            Offset="0" />
+                                        <GradientStop Color="#1CD697"
+                                            Offset="1" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Command="{Binding CreateAccountClickedCommand}" BackgroundColor="White" HorizontalOptions="FillAndExpand" Text="Create an account" CornerRadius="26" FontSize="14" FontFamily="PoppinsSemiBold"  Padding="0,15" TextColor="#22C9C0" BorderColor="#22C9C0" BorderWidth="1"/>
+
+
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

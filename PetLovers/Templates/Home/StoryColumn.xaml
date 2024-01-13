@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:PetLovers.Models"
+             xmlns:UI="clr-namespace:PetLovers.Templates.UI"
+             x:Class="PetLovers.Templates.Home.StoryColumn"
+             x:DataType="models:Story">
+    <StackLayout Spacing="8">
+        <Grid>
+            <Frame HeightRequest="62" WidthRequest="62" CornerRadius="31" BorderColor="Transparent">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#28C6D9"
+                            Offset="0" />
+                        <GradientStop Color="#1CD697"
+                            Offset="1" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <Grid>
+                <Frame WidthRequest="56" HeightRequest="56" CornerRadius="27" BackgroundColor="White" BorderColor="Transparent"/>
+                <UI:RoundImage ImageSource="{Binding User.ProfilePicture}" HeightRequest="50" WidthRequest="50"/>
+            </Grid>
+            <Border
+                Margin="0,0,0,-2.5"
+         BackgroundColor="Red"
+         HorizontalOptions="Center"
+                WidthRequest="20.9"
+                HeightRequest="9.73"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 1"
+         VerticalOptions="End">
+                <Label Text="LIVE"
+                       FontSize="6"
+                       FontFamily="PoppinsSemiBold"
+            TextColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"/>
+            </Border>
+        </Grid>
+        <Label Text="{Binding User.Name}" FontSize="11" FontFamily="PoppinsRegular" TextColor="#C6C6C6" HorizontalOptions="Center" LineBreakMode="TailTruncation"/>
+    </StackLayout>
+</ContentView>
