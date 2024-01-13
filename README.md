@@ -10,7 +10,7 @@ This repository and all its contents are the sole property of Hristo Petrov. The
 
 ### Do Not Distribute or Clone
 
-This repository is provided for viewing and reference purposes only. Unauthorized distribution, cloning, modification, or use of this software for any purpose is strictly prohibited and may be subject to legal action.
+This repository is provided for viewing and reference purposes only. Unauthorized distribution, cloning, modification, or use of this template for any purpose is strictly prohibited and may be subject to legal action.
 
 ### Contact Information
 
