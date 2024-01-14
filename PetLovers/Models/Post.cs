@@ -22,6 +22,8 @@ namespace PetLovers.Models
 
         public int ReSharedCount { get; set; }
 
+        public bool IsLiked { get; set; } = false;
+
         [NotMapped]
         public string TimeAgo => CreatedDate.ToTimeAgo();
     }

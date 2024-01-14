@@ -5,7 +5,9 @@ using PetLovers.ViewModels.Home;
 using PetLovers.ViewModels.Startup;
 using PetLovers.Views.Auth;
 using PetLovers.Views.Home;
+using PetLovers.Views.Home.Views;
 using PetLovers.Views.Startup;
+using Sharpnado.Tabs;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace PetLovers
@@ -19,6 +21,7 @@ namespace PetLovers
                 .UseMauiApp<App>()
                 .UseSkiaSharp()
                 .UseMauiCommunityToolkit()
+                .UseSharpnadoTabs(loggerEnable: false)
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -52,16 +55,24 @@ namespace PetLovers
             builder.Services.AddSingleton<RegisterPageViewModel>();
             builder.Services.AddSingleton<PasswordRecoveryPageViewModel>();
 
+            builder.Services.AddSingleton<BottomTabsPageViewModel>();
             builder.Services.AddSingleton<HomePageViewModel>();
             #endregion
 
-            #region Pages
-            builder.Services.AddTransient<LoadingPage>();
-            builder.Services.AddTransient<LoginPage>();
-            builder.Services.AddTransient<RegisterPage>();
-            builder.Services.AddTransient<PasswordRecoveryPage>();
 
-            builder.Services.AddTransient<HomePage>();
+            #region Pages
+            builder.Services.AddSingleton<LoadingPage>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<RegisterPage>();
+            builder.Services.AddSingleton<PasswordRecoveryPage>();
+
+            builder.Services.AddSingleton<IndexPage>();
+
+
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<ChatPage>();
+            builder.Services.AddSingleton<NotificationsPage>();
+            builder.Services.AddSingleton<MyProfilePage>();
             #endregion
 
 #if DEBUG

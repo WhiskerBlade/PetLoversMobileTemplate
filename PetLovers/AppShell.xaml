@@ -28,8 +28,8 @@
     ContentTemplate="{DataTemplate authPages:PasswordRecoveryPage}"
     Route="PasswordRecoveryPage" />
 
-    <ShellContent Route="HomePage"
-    ContentTemplate="{DataTemplate homePages:HomePage}"
-    Title="Home" />
+    <ShellContent Route="IndexPage"
+    ContentTemplate="{DataTemplate homePages:IndexPage}"
+    Title="Index" />
 
 </Shell>

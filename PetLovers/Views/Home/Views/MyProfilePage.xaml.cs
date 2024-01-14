@@ -1,8 +1,8 @@
 namespace PetLovers.Views.Home.Views;
 
-public partial class HomeHomePage : ContentPage
+public partial class MyProfilePage : ContentView
 {
-	public HomeHomePage()
+	public MyProfilePage()
 	{
 		InitializeComponent();
 	}

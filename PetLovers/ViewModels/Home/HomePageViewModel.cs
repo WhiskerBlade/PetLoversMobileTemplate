@@ -36,7 +36,8 @@ namespace PetLovers.ViewModels.Home
                 CreatedDate = DateTimeOffset.Now.AddDays(-3),
                 LovesCount = 452,
                 CommentsCount = 512,
-                ReSharedCount = 320
+                ReSharedCount = 320,
+                IsLiked = true,
 
             });
 
@@ -55,13 +56,60 @@ namespace PetLovers.ViewModels.Home
                     Id = 2,
                     Name = "Dogs"
                 },
-                Image = ImageSource.FromUri(new Uri("")),
+                Image = ImageSource.FromUri(new Uri("https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/08/gettyimages-530330473.jpg")),
                 CreatedDate = DateTimeOffset.Now.AddMinutes(-30),
                 LovesCount = 452,
                 CommentsCount = 512,
-                ReSharedCount = 320
+                ReSharedCount = 320,
+                IsLiked = false,
 
             });
+            Posts.Add(new Post
+             {
+                 Id = 2,
+                 User = new User
+                 {
+                     Id = 2,
+                     Name = "Johnston",
+                     Surname = "Smith",
+                     ProfilePicture = ImageSource.FromUri(new Uri("https://vivifyintegrativehealth.com/wp-content/uploads/2017/02/44813671_m.jpg"))
+                 },
+                 Category = new Category
+                 {
+                     Id = 2,
+                     Name = "Dogs"
+                 },
+                 Image = ImageSource.FromUri(new Uri("https://www.pd.com.au/wp-content/uploads/2023/01/Indian_Spitz_Dog-scaled.jpg.webp")),
+                 CreatedDate = DateTimeOffset.Now.AddMinutes(-30),
+                 LovesCount = 452,
+                 CommentsCount = 512,
+                 ReSharedCount = 320,
+                 IsLiked = false,
+
+             });
+            Posts.Add(new Post
+             {
+                 Id = 2,
+                 User = new User
+                 {
+                     Id = 2,
+                     Name = "Johnston",
+                     Surname = "Smith",
+                     ProfilePicture = ImageSource.FromUri(new Uri("https://vivifyintegrativehealth.com/wp-content/uploads/2017/02/44813671_m.jpg"))
+                 },
+                 Category = new Category
+                 {
+                     Id = 1,
+                     Name = "Cats"
+                 },
+                 Image = ImageSource.FromUri(new Uri("https://www.bluecross.org.uk/sites/default/files/d8/2020-01/Moving%20house.JPG")),
+                 CreatedDate = DateTimeOffset.Now.AddMinutes(-30),
+                 LovesCount = 452,
+                 CommentsCount = 512,
+                 ReSharedCount = 320,
+                 IsLiked = false,
+
+             });
         }
         private async Task GetCaegoriesAsync()
         {

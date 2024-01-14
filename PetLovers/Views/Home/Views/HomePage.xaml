@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:PetLovers.ViewModels.Home"
-             xmlns:helpers="clr-namespace:PetLovers.Helpers"
+             x:Class="PetLovers.Views.Home.Views.HomePage"
              xmlns:templates="clr-namespace:PetLovers.Templates.Home"
-             x:Class="PetLovers.Views.Home.HomePage"
-             Shell.NavBarIsVisible="False"
-             Title="HomePage">
-    <ContentPage.BindingContext>
+             xmlns:helpers="clr-namespace:PetLovers.Helpers"
+             xmlns:viewModels="clr-namespace:PetLovers.ViewModels.Home">
+    <ContentView.BindingContext>
         <viewModels:HomePageViewModel/>
-    </ContentPage.BindingContext>
+    </ContentView.BindingContext>
     <ScrollView VerticalScrollBarVisibility="Never" Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Grid RowDefinitions="Auto, Auto, *">
             <StackLayout Grid.Row="0">
@@ -17,13 +15,13 @@
                     <Label Grid.Column="0" Text="Stories" TextColor="#1B1B1B" FontFamily="PoppinsMedium" FontSize="24" HorizontalOptions="Start"/>
 
                     <Label 
-        Grid.Column="1"
-        FontFamily="MaterialIcons" 
-        Text="{x:Static helpers:MaterialIcons.Search}"
-        FontSize="24"
-        TextColor="#1B1B1B"
-        HorizontalOptions="End"
-        VerticalOptions="Center">
+                Grid.Column="1"
+                FontFamily="MaterialIcons" 
+                Text="{x:Static helpers:MaterialIcons.Search}"
+                FontSize="24"
+                TextColor="#1B1B1B"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
                     </Label>
                 </Grid>
                 <ScrollView Orientation="Horizontal">
@@ -34,27 +32,27 @@
                                     <Frame.Background>
                                         <LinearGradientBrush EndPoint="0,1">
                                             <GradientStop Color="#28C6D9"
-                                Offset="0" />
+                        Offset="0" />
                                             <GradientStop Color="#1CD697"
-                                Offset="1" />
+                        Offset="1" />
                                         </LinearGradientBrush>
                                     </Frame.Background>
                                 </Frame>
                                 <Label 
-                    Grid.Column="1"
-                    FontFamily="MaterialIcons" 
-                    Text="{x:Static helpers:MaterialIcons.Add}"
-                    FontSize="35"
-                    TextColor="White"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center">
+            Grid.Column="1"
+            FontFamily="MaterialIcons" 
+            Text="{x:Static helpers:MaterialIcons.Add}"
+            FontSize="35"
+            TextColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
                                 </Label>
                             </Grid>
                             <Label Text="Add Story" FontSize="11" FontFamily="PoppinsRegular" TextColor="#C6C6C6" HorizontalOptions="Center" LineBreakMode="TailTruncation"/>
                         </StackLayout>
                         <CollectionView
-            ItemsSource="{Binding Stories}"
-            SelectionMode="None">
+    ItemsSource="{Binding Stories}"
+    SelectionMode="None">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout ItemSpacing="11" Orientation="Horizontal" />
                             </CollectionView.ItemsLayout>
@@ -70,9 +68,9 @@
             <StackLayout Grid.Row="1">
                 <Label Text="Categories" TextColor="#1B1B1B" FontFamily="PoppinsMedium" FontSize="24" HorizontalOptions="Start" Padding="15"/>
                 <CollectionView
-                ItemsSource="{Binding Categories}"
-                SelectionMode="None"
-            Margin="11,0">
+        ItemsSource="{Binding Categories}"
+        SelectionMode="None"
+    Margin="11,0">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
@@ -83,13 +81,13 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-            <ScrollView Grid.Row="2" VerticalOptions="FillAndExpand">
+            <ScrollView Grid.Row="2" VerticalOptions="FillAndExpand" Padding="0,0,0,15">
                 <StackLayout>
                     <Label Text="Posts" TextColor="#1B1B1B" FontFamily="PoppinsMedium" FontSize="24" HorizontalOptions="Start" Padding="15"/>
                     <CollectionView
-            ItemsSource="{Binding Posts}"
-            SelectionMode="None"
-            Margin="11,0">
+                    ItemsSource="{Binding Posts}"
+                    SelectionMode="None"
+                    Margin="11,0">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
@@ -101,7 +99,7 @@
                     </CollectionView>
                 </StackLayout>
             </ScrollView>
-            
+
         </Grid>
     </ScrollView>
-</ContentPage>
+</ContentView>

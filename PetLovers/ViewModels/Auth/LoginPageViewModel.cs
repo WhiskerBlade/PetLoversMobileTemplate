@@ -14,7 +14,7 @@ namespace PetLovers.ViewModels.Auth
         [RelayCommand]
         private async void LoginClicked()
         {
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            await Shell.Current.GoToAsync($"//{nameof(IndexPage)}");
         }
 
         [RelayCommand]

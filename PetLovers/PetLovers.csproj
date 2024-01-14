@@ -78,12 +78,20 @@
 	  <None Remove="Resources\Fonts\Poppins-ThinItalic.ttf" />
 	  <None Remove="Resources\Images\birdcatlgoo.svg" />
 	  <None Remove="Resources\Images\catcatlogo.svg" />
+	  <None Remove="Resources\Images\commenticon.svg" />
 	  <None Remove="Resources\Images\dogcatlogo.svg" />
+	  <None Remove="Resources\Images\favoriteicon.svg" />
+	  <None Remove="Resources\Images\favoriteiconactive.svg" />
 	  <None Remove="Resources\Images\hamstercaticon.svg" />
+	  <None Remove="Resources\Images\hometabicon.svg" />
 	  <None Remove="Resources\Images\loginbg.png" />
 	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\messagestabicon.svg" />
+	  <None Remove="Resources\Images\notificationstabicon.svg" />
+	  <None Remove="Resources\Images\profiletabicon.svg" />
 	  <None Remove="Resources\Images\pwrecoverybg.png" />
 	  <None Remove="Resources\Images\registerbg.png" />
+	  <None Remove="Resources\Images\shareicon.svg" />
 	  <None Remove="Resources\Images\splashbg.png" />
 	  <None Remove="Resources\raw\petloversloading.json" />
 	</ItemGroup>
@@ -94,11 +102,21 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Home\IndexPage.xaml.cs">
+	    <DependentUpon>IndexPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Home\Views\ChatPage.xaml.cs">
+	    <DependentUpon>ChatPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -123,10 +141,19 @@
 	  <MauiXaml Update="Views\Auth\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Home\HomePage.xaml">
+	  <MauiXaml Update="Views\Home\IndexPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Home\Views\HomeHomePage.xaml">
+	  <MauiXaml Update="Views\Home\Views\ChatPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Home\Views\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Home\Views\MyProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Home\Views\NotificationsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Startup\LoadingPage.xaml">

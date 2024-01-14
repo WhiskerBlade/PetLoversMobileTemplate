@@ -2,10 +2,10 @@ using PetLovers.ViewModels.Home;
 
 namespace PetLovers.Views.Home;
 
-public partial class HomePage : ContentPage
+public partial class IndexPage : ContentPage
 {
-	private readonly HomePageViewModel _viewModel;
-	public HomePage(HomePageViewModel viewModel)
+	private readonly BottomTabsPageViewModel _viewModel;
+	public IndexPage(BottomTabsPageViewModel viewModel)
 	{
 		InitializeComponent();
 		_viewModel = viewModel;

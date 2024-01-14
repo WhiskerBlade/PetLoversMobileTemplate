@@ -3,24 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:UI="clr-namespace:PetLovers.Templates.UI"
              xmlns:models="clr-namespace:PetLovers.Models"
+             xmlns:helpers="clr-namespace:PetLovers.Helpers"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PetLovers.Templates.Home.Posts"
              x:DataType="models:Post">
-    <VerticalStackLayout Spacing="18">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <mct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <VerticalStackLayout Spacing="15">
         <Grid ColumnDefinitions="*, Auto">
             <HorizontalStackLayout Spacing="15">
                 <UI:RoundImage ImageSource="{Binding User.ProfilePicture}" HeightRequest="50" WidthRequest="50"/>
                 <StackLayout VerticalOptions="Center" Spacing="-5">
-                    <HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
                         <Label Text="{Binding User.Name}" FontSize="16" TextColor="#1B1B1B" FontFamily="PoppinsSemiBold"/>
                         <Label Text="{Binding User.Surname}" FontSize="16" TextColor="#1B1B1B" FontFamily="PoppinsSemiBold"/>
                     </HorizontalStackLayout>
-                    <HorizontalStackLayout Spacing="1">
+                    <HorizontalStackLayout Spacing="5">
                         <Label Text="{Binding TimeAgo}" FontSize="11" TextColor="#CFD4DC" FontFamily="PoppinsRegular"/>
                         <Label Text="-" FontSize="11" TextColor="#CFD4DC" FontFamily="PoppinsRegular"/>
                         <Label Text="{Binding Category.Name}" FontSize="11" TextColor="#CFD4DC" FontFamily="PoppinsRegular"/>
                     </HorizontalStackLayout>
                 </StackLayout>
             </HorizontalStackLayout>
+            <Label 
+                Grid.Column="1"
+                FontFamily="MaterialIcons" 
+                Text="{x:Static helpers:MaterialIcons.More_vert}"
+                FontSize="24"
+                TextColor="#7A8FA6"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+            </Label>
         </Grid>
         <Border HeightRequest="186" HorizontalOptions="FillAndExpand" StrokeShape="RoundRectangle 10" StrokeThickness="0">
             <AbsoluteLayout>
@@ -28,14 +44,18 @@
             </AbsoluteLayout>
         </Border>
         <Grid ColumnDefinitions="Auto, Auto, Auto" ColumnSpacing="30" Padding="15,0">
-            <HorizontalStackLayout Grid.Column="0">
-                <Label Text="1"/>
+            <HorizontalStackLayout Grid.Column="0" Spacing="6">
+                <Image Source="favoriteiconactive.svg" IsVisible="{Binding IsLiked}"/>
+                <Image Source="favoriteicon.svg" IsVisible="{Binding IsLiked, Converter={StaticResource InvertedBoolConverter}}"/>
+                <Label Text="{Binding LovesCount}" FontSize="16" TextColor="#C4C4C4" FontFamily="PoppinsSemiBold" VerticalOptions="Center"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout Grid.Column="1">
-                <Label Text="2"/>
+            <HorizontalStackLayout Grid.Column="1" Spacing="6">
+                <Image Source="commenticon.svg"/>
+                <Label Text="{Binding CommentsCount}" FontSize="16" TextColor="#C4C4C4" FontFamily="PoppinsSemiBold" VerticalOptions="Center"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout Grid.Column="2">
-                <Label Text="3"/>
+            <HorizontalStackLayout Grid.Column="2" Spacing="6">
+                <Image Source="shareicon.svg"/>
+                <Label Text="{Binding ReSharedCount}" FontSize="16" TextColor="#C4C4C4" FontFamily="PoppinsSemiBold" VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Grid>
     </VerticalStackLayout>
