@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetLovers.Views.Home.Views.MyProfilePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="PetLovers.Views.Home.Views.MyProfilePage"
+             xmlns:UI="clr-namespace:PetLovers.Templates.UI"
+             xmlns:viewModels="clr-namespace:PetLovers.ViewModels.Home">
+    <ContentView.BindingContext>
+        <viewModels:MyProfilePageViewModel/>
+    </ContentView.BindingContext>
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, *">
+            <Grid Padding="15" Grid.Row="0">
+                <Label Grid.Column="0" Text="My Profile" TextColor="#1B1B1B" FontSize="24" FontFamily="PoppinsMedium" HorizontalOptions="Start"/>
+                <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Center" Spacing="13">
+                    <Image Source="saveoutlineicon.svg" BackgroundColor="Transparent"></Image>
+                    <Image Source="settingsicon.svg" BackgroundColor="Transparent"></Image>
+                </HorizontalStackLayout>
+            </Grid>
+            <VerticalStackLayout Grid.Row="1" Margin="0,6,0,0" HorizontalOptions="Center">
+                <UI:RoundImage ImageSource="{Binding User.Avatar}" HeightRequest="128" WidthRequest="120"/>
+                <StackLayout Margin="0,15,0,0" Spacing="-5">
+                    <Label Text="{Binding User.FullName}" TextColor="#1B1B1B" FontSize="21" FontFamily="PoppinsBold" HorizontalOptions="Center"/>
+                    <Label Text="{Binding User.ConcatCityStateCountry}" TextColor="#C6C6C6" FontSize="14.5" FontFamily="PoppinsRegular" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Label Margin="0,14,0,0" FontSize="13" TextColor="#989898" FontFamily="PoppinsRegular" HorizontalTextAlignment="Center" LineHeight="1.5" LineBreakMode="WordWrap" Text="Daily dose of cute kittens! 😺😍
+Advertising:
+DM us or email at noname@mail.com
+#kitty #cats #kitten #kittens" HorizontalOptions="Center" MaximumWidthRequest="230" MaximumHeightRequest="130"/>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentView>

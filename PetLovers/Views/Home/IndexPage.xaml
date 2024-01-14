@@ -8,63 +8,87 @@
              Shell.NavBarIsVisible="False"
              Title="IndexPage"
              x:DataType="viewModels:BottomTabsPageViewModel">
-    <Grid>
+    <Grid RowDefinitions="*, Auto">
 
 
-        <tabs:ViewSwitcher x:Name="Switcher"
-                           Animate="True"
+        <tabs:ViewSwitcher Grid.Row="0" x:Name="Switcher"
                            SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
             <tabs:DelayedView x:TypeArguments="views:HomePage"
                               AccentColor="{StaticResource Primary}"
                               BindingContext="{Binding HomePageViewModel}"
-                              Animate="True"
                               UseActivityIndicator="True" />
             <tabs:DelayedView x:TypeArguments="views:ChatPage"
                               AccentColor="{StaticResource Primary}"
-                              Animate="True"
                               UseActivityIndicator="True" />
             <tabs:DelayedView x:TypeArguments="views:NotificationsPage"
                   AccentColor="{StaticResource Primary}"
-                  Animate="True"
                   UseActivityIndicator="True" />
             <tabs:DelayedView x:TypeArguments="views:MyProfilePage"
+                              BindingContext="{Binding MyProfilePageViewModel}"
                   AccentColor="{StaticResource Primary}"
-                  Animate="True"
                   UseActivityIndicator="True" />
         </tabs:ViewSwitcher>
 
-        <ContentView VerticalOptions="End">
+        <ContentView Grid.Row="1">
             <tabs:TabHostView HorizontalOptions="FillAndExpand"
                               HeightRequest="80"
-                              Padding="11,0"
                               BackgroundColor="{StaticResource White}"
                               CornerRadius="41"
-                              IsSegmented="True"
+                              IsSegmented="False"
                               Orientation="Horizontal"
                               SegmentedOutlineColor="{StaticResource White}"
                               SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}"
                               TabType="Fixed">
                 <tabs:TabHostView.Shadow>
-                    <Shadow Brush="{StaticResource Gray300}"
-                        Opacity="0.7"
-                        Radius="30"
-                        Offset="0,10" />
+                    <Shadow Brush="{StaticResource Black}"
+                        Opacity="0.11"
+                        Radius="36"
+                        Offset="0,-10" />
                 </tabs:TabHostView.Shadow>
-                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="hometabicon.svg"/>
-                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="messagestabicon.svg"/>
-                <tabs:TabButton x:Name="TabButton"
-                                
-                                        ButtonBackgroundColor="{StaticResource Primary}"
-                                        ButtonCircleSize="60"
-                                        ButtonPadding="12"
-                                        IconImageSource="camera_96.png"
-                                        TranslationY="-20" />
-                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="notificationstabicon.svg">
+                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="hometabicon.svg" IsTextVisible="False" IconSize="25" SelectedTabColor="#1CD697"/>
+                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="messagestabicon.svg" IsTextVisible="False" IconSize="30" SelectedTabColor="#1CD697">
                     <tabs:BottomTabItem.Badge>
-                        <tabs:BadgeView BackgroundColor="{StaticResource Tertiary}" Text="new" />
+                        <tabs:BadgeView Text="1" TranslationY="20" TranslationX="-10" HeightRequest="23" MinimumWidthRequest="23" FontFamily="PoppinsSemiBold">
+                            <tabs:BadgeView.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#28C6D9"
+Offset="0" />
+                                    <GradientStop Color="#1CD697"
+Offset="1" />
+                                </LinearGradientBrush>
+                            </tabs:BadgeView.Background>
+                        </tabs:BadgeView>
                     </tabs:BottomTabItem.Badge>
                 </tabs:BottomTabItem>
-                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="profiletabicon.svg"/>
+                <tabs:TabButton x:Name="TabButton"
+                                
+                                        ButtonBackgroundColor="{StaticResource White}"
+                                        ButtonCircleSize="56"
+                                        ButtonPadding="5"
+                                        IconImageSource="addbigbutton.svg"
+                                        TranslationY="-30">
+                    <tabs:TabButton.Shadow>
+                        <Shadow Brush="Black"
+                Offset="0,10"
+                Radius="36"
+                Opacity="0.16" />
+                    </tabs:TabButton.Shadow>
+                </tabs:TabButton>
+                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="notificationstabicon.svg" IsTextVisible="False" IconSize="25" SelectedTabColor="#1CD697">
+                    <tabs:BottomTabItem.Badge>
+                        <tabs:BadgeView Text="1" TranslationY="20" TranslationX="-20" HeightRequest="21" MinimumWidthRequest="20" FontFamily="PoppinsSemiBold">
+                            <tabs:BadgeView.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#28C6D9"
+        Offset="0" />
+                                    <GradientStop Color="#1CD697"
+        Offset="1" />
+                                </LinearGradientBrush>
+                            </tabs:BadgeView.Background>
+                        </tabs:BadgeView>
+                    </tabs:BottomTabItem.Badge>
+                </tabs:BottomTabItem>
+                <tabs:BottomTabItem Style="{StaticResource BottomTab}" IconImageSource="profiletabicon.svg" IsTextVisible="False" IconSize="25" SelectedTabColor="#1CD697"/>
             </tabs:TabHostView>
         </ContentView>
     </Grid>

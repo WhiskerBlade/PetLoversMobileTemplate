@@ -15,8 +15,11 @@ namespace PetLovers.ViewModels.Home
         public BottomTabsPageViewModel()
         {
             HomePageViewModel = new HomePageViewModel();
+            MyProfilePageViewModel = new MyProfilePageViewModel();
         }
 
         public HomePageViewModel HomePageViewModel { get; }
+
+        public MyProfilePageViewModel MyProfilePageViewModel { get; }
     }
 }

@@ -76,6 +76,7 @@
 	  <None Remove="Resources\Fonts\Poppins-SemiBoldItalic.ttf" />
 	  <None Remove="Resources\Fonts\Poppins-Thin.ttf" />
 	  <None Remove="Resources\Fonts\Poppins-ThinItalic.ttf" />
+	  <None Remove="Resources\Images\addbigbutton.svg" />
 	  <None Remove="Resources\Images\birdcatlgoo.svg" />
 	  <None Remove="Resources\Images\catcatlogo.svg" />
 	  <None Remove="Resources\Images\commenticon.svg" />
@@ -91,6 +92,8 @@
 	  <None Remove="Resources\Images\profiletabicon.svg" />
 	  <None Remove="Resources\Images\pwrecoverybg.png" />
 	  <None Remove="Resources\Images\registerbg.png" />
+	  <None Remove="Resources\Images\saveoutlineicon.svg" />
+	  <None Remove="Resources\Images\settingsicon.svg" />
 	  <None Remove="Resources\Images\shareicon.svg" />
 	  <None Remove="Resources\Images\splashbg.png" />
 	  <None Remove="Resources\raw\petloversloading.json" />

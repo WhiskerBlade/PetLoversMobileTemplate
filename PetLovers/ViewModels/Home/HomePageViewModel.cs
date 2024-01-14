@@ -32,7 +32,7 @@ namespace PetLovers.ViewModels.Home
                     Id = 1,
                     Name = "Cats"
                 },
-                Image = ImageSource.FromUri(new Uri("https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg")),
+                Image = ImageSource.FromUri(new Uri("https://scontent.fmla1-2.fna.fbcdn.net/v/t39.30808-6/410992096_896330928665739_2112244194859195778_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9534ce&_nc_ohc=m8H8ajEFQa8AX-GKUdi&_nc_ht=scontent.fmla1-2.fna&oh=00_AfDm6DTyLe6Jms6PxYDKsuFt5Xsxc7UCj0OCROnvqouMQg&oe=65AA20A0")),
                 CreatedDate = DateTimeOffset.Now.AddDays(-3),
                 LovesCount = 452,
                 CommentsCount = 512,

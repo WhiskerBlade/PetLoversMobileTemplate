@@ -57,6 +57,7 @@ namespace PetLovers
 
             builder.Services.AddSingleton<BottomTabsPageViewModel>();
             builder.Services.AddSingleton<HomePageViewModel>();
+            builder.Services.AddSingleton<MyProfilePageViewModel>();
             #endregion
 
 

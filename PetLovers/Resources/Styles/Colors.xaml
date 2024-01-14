@@ -42,4 +42,11 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+    
+    <LinearGradientBrush x:Key="SelectedTabColor" EndPoint="0,1">
+        <GradientStop Color="#28C6D9"
+        Offset="0" />
+        <GradientStop Color="#1CD697"
+        Offset="1" />
+    </LinearGradientBrush>
 </ResourceDictionary>
