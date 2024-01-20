@@ -1,8 +1,10 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls.Compatibility.Hosting;
 using PetLovers.ViewModels.Auth;
 using PetLovers.ViewModels.Home;
 using PetLovers.ViewModels.Startup;
+using PetLovers.Views;
 using PetLovers.Views.Auth;
 using PetLovers.Views.Home;
 using PetLovers.Views.Home.Views;
@@ -47,7 +49,14 @@ namespace PetLovers
                     fonts.AddFont("Poppins-ThinItalic.ttf", "PoppinsThinItalic");
 
                     fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
-                });
+                })
+                            .ConfigureMauiHandlers((handlers) => {
+
+#if ANDROID
+                                handlers.AddCompatibilityRenderer(typeof(CameraPage), typeof(PetLovers.Platforms.Android.CameraPreviewRenderer));
+#endif
+
+                            });
 
             #region View Models
             builder.Services.AddSingleton<LoadingPageViewModel>();
@@ -75,6 +84,8 @@ namespace PetLovers
             builder.Services.AddSingleton<NotificationsPage>();
             builder.Services.AddSingleton<MyProfilePage>();
             #endregion
+
+
 
 #if DEBUG
             builder.Logging.AddDebug();
