@@ -1,4 +1,5 @@
-﻿using PetLovers.Models;
+﻿using PetLovers.Helpers;
+using PetLovers.Models;
 using PetLovers.Views;
 
 namespace PetLovers
@@ -10,7 +11,7 @@ namespace PetLovers
         {
             InitializeComponent();
 
-            MainPage = new CameraPage();
+            MainPage = new AppShell();
         }
     }
 }

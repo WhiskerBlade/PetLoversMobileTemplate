@@ -61,7 +61,7 @@ Offset="1" />
                     </tabs:BottomTabItem.Badge>
                 </tabs:BottomTabItem>
                 <tabs:TabButton x:Name="TabButton"
-                                
+                                        TapCommand="{Binding CameraButtonClickedCommand}"
                                         ButtonBackgroundColor="{StaticResource White}"
                                         ButtonCircleSize="56"
                                         ButtonPadding="5"

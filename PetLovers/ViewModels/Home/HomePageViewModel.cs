@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using PetLovers.Helpers;
 using PetLovers.Models;
+using PetLovers.Views;
 using System.Collections.ObjectModel;
 
 namespace PetLovers.ViewModels.Home
@@ -161,7 +164,6 @@ namespace PetLovers.ViewModels.Home
                 });
             }
         }
-
         public HomePageViewModel()
         {
             GetStoriesAsync();

@@ -8,7 +8,7 @@
     <Grid x:Name="scannerView" Margin="0">
         <controls:CameraPreview 
             x:Name="cameraView"
-            Camera="Rear"
+            Camera="Front"
             ScanMode="Multiple"
 			HorizontalOptions="FillAndExpand"
 			VerticalOptions="FillAndExpand" 

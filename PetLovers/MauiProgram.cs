@@ -5,6 +5,7 @@ using PetLovers.ViewModels.Auth;
 using PetLovers.ViewModels.Home;
 using PetLovers.ViewModels.Startup;
 using PetLovers.Views;
+using PetLovers.Controls;
 using PetLovers.Views.Auth;
 using PetLovers.Views.Home;
 using PetLovers.Views.Home.Views;
@@ -22,6 +23,7 @@ namespace PetLovers
             builder
                 .UseMauiApp<App>()
                 .UseSkiaSharp()
+                .UseMauiCompatibility()
                 .UseMauiCommunityToolkit()
                 .UseSharpnadoTabs(loggerEnable: false)
                 .ConfigureFonts(fonts =>
@@ -53,7 +55,7 @@ namespace PetLovers
                             .ConfigureMauiHandlers((handlers) => {
 
 #if ANDROID
-                                handlers.AddCompatibilityRenderer(typeof(CameraPage), typeof(PetLovers.Platforms.Android.CameraPreviewRenderer));
+                                handlers.AddCompatibilityRenderer(typeof(CameraPreview), typeof(PetLovers.Platforms.Android.CameraPreviewRenderer));
 #endif
 
                             });
